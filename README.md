@@ -6,13 +6,13 @@ PyWinSparkle
 
 An auto-update framework for frozen Python applications on Windows.
 
-Pywinsparkle is a wrapper for the WinSparkle project originally developed by Vaclav Slavik. WinSparkle is an update framework for Windows. 
+PyWinSparkle is a wrapper for the WinSparkle project originally developed by Vaclav Slavik. WinSparkle is an update framework for Windows.
 
 The original WinSparkle project is located here: https://winsparkle.org/
 
-github: https://github.com/vslavik/winsparkle
+GitHub: https://github.com/vslavik/winsparkle
 
-The current version of PyWinSparkle includes WinSparkle 0.6.0
+The current version of PyWinSparkle includes WinSparkle 0.7.0
 
 Note: This is package is not affiliated with the original developer Vaclac Slavik and is therefore technically unofficial.
 
@@ -21,20 +21,20 @@ Note: This is package is not affiliated with the original developer Vaclac Slavi
 
 `pip install pywinsparkle`
 
-Wheels are built for 32bit and 64bit versions of Windows, covering Python 2.7 and all python version after 3.3
+Wheels are built for 32bit and 64bit versions of Windows, covering Python 2.7 and all Python versions from 3.6 onwards.
 
-Note: If you are using one of the above versions pip throws and errror, consider upgrading pip with `pip install --upgrade pip`
+Note: If you are using one of the above versions pip throws an error, consider upgrading pip with `pip install --upgrade pip`
 
 
 ### Usage
 
 
 All of the API function wrapper names are the same as the original WinSparkle project. The only difference
-is in the argument types which are either python strings or integers. For the callback functions, just the function
+is in the argument types which are either Python strings or integers. For the callback functions, just the function
 object is required (ie, the name of the function without the parenthesis).
 
-In pywinsparkle, I have not tested created Windows Resource files, instead I have just been using `win_sparkle_set_app_details()` function. The Windows Resource files should work though.
-It is also necessary to set the appcast url with `win_sparkle_set_appcast_url()`.
+In PyWinSparkle, I have not tested created Windows Resource files, instead I have just been using `win_sparkle_set_app_details()` function. The Windows Resource files should work though.
+It is also necessary to set the AppCast URL with `win_sparkle_set_appcast_url()`.
 
 Basic Example:
 
@@ -142,6 +142,6 @@ a = Analysis(['Updater\\src\\main.py'],
              cipher=block_cipher)
 ```
 
-The package contains DLL's for both 64bit and 32bit versions of python. Adding the 
-preceding code snippet makes it possible to switch between versions of python 
+The package contains DLLs for both 64bit and 32bit versions of Python. Adding the
+preceding code snippet makes it possible to switch between versions of Python
 seamlessly.
