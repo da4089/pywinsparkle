@@ -31,7 +31,7 @@ function download_latest_winsparkle()
     rm -r WORK
 }
 
-# This fucntion creates a virtual environment for the version
+# This function creates a virtual environment for the version
 # of python specified in the arguments.
 # Args:
 #     $1 major version
