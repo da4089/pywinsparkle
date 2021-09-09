@@ -2,5 +2,5 @@ venv*/
 build/
 .idea/
 dist/
-pysparkle/__pycache__/
+pywinsparkle/__pycache__/
 pywinsparkle.egg-info
