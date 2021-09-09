@@ -74,29 +74,41 @@ function main()
 
 	sudo apt-get install pandoc
 
+	# create the wheel for python 3.9
+	build_python_wheel 3 9 6 win32
+	build_python_wheel 3 9 6 win_amd64
+
+	# create the wheel for python 3.8
+	build_python_wheel 3 8 12 win32
+	build_python_wheel 3 8 12 win_amd64
+
+	# create the wheel for python 3.7
+	build_python_wheel 3 7 12 win32
+	build_python_wheel 3 7 12 win_amd64
+
 	# create the wheel for python 3.6
-	build_python_wheel 3 6 1 win32 
-	build_python_wheel 3 6 1 win_amd64
+	build_python_wheel 3 6 15 win32
+	build_python_wheel 3 6 15 win_amd64
 
 	# create the wheel for python 3.5
-	build_python_wheel 3 5 2 win32
-	build_python_wheel 3 5 2 win_amd64
+	#build_python_wheel 3 5 9 win32
+	#build_python_wheel 3 5 9 win_amd64
 
 	# create the wheel for python 3.4
-	build_python_wheel 3 4 5 win32
-	build_python_wheel 3 4 5 win_amd64
+	#build_python_wheel 3 4 10 win32
+	#build_python_wheel 3 4 10 win_amd64
 
 	# create the wheel for python 3.3
-	build_python_wheel 3 3 5 win32
-	build_python_wheel 3 3 5 win_amd64
+	#build_python_wheel 3 3 7 win32
+	#build_python_wheel 3 3 7 win_amd64
 
 	# create the wheel for python 3.2
 	#build_python_wheel 3 2 6 win32
 	#build_python_wheel 3 2 6 win_amd64
 
 	# create the wheel for python 2.7
-	build_python_wheel 2 7 13 win32
-	build_python_wheel 2 7 13 win_amd64
+	build_python_wheel 2 7 18 win32
+	build_python_wheel 2 7 18 win_amd64
 
 	sudo rm -rf WORK_TEMP	
 	sudo rm -rf install_python.sh
