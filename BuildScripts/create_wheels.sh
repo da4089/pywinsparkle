@@ -74,6 +74,10 @@ function main()
 
 	sudo apt-get install pandoc
 
+	# create the wheel for python 3.10
+	build_python_wheel 3 10 4 win32
+	build_python-wheel 3 10 4 win_amd64
+
 	# create the wheel for python 3.9
 	build_python_wheel 3 9 6 win32
 	build_python_wheel 3 9 6 win_amd64
