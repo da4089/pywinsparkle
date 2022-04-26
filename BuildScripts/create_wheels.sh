@@ -9,15 +9,15 @@ function download_latest_winsparkle()
 {
     winsparkle_version="0.7.0"
 
-    mkdir -p ./WORK
-    cd WORK 
+	mkdir -p ./WORK
+	cd WORK
 
     wget https://github.com/vslavik/winsparkle/releases/download/v$winsparkle_version/WinSparkle-$winsparkle_version.zip
     unzip WinSparkle-$winsparkle_version.zip
     cd WinSparkle-$winsparkle_version
 
     libs_folder="../../../pywinsparkle/libs"
-	
+
     # move the x86 version
     cp Release/WinSparkle.dll $libs_folder/x86
     diff Release/WinSparkle.dll $libs_folder/x86/WinSparkle.dll
@@ -44,7 +44,7 @@ function build_python_wheel()
 	bash install_python.sh --major $1 --minor $2 --revision $3
 	source venv/bin/activate
 	python -m pip install wheel
-	
+
 	python -m pip install pypandoc
 
 	cd ../
@@ -56,7 +56,7 @@ function build_python_wheel()
 function generate_documentation()
 {
 	rm -rf venv
-        bash install_python.sh --major 3 --minor 6 --revision 1
+	bash install_python.sh --major 3 --minor 6 --revision 1
 	source venv/bin/activate
 	python -m pip install wheel
 	python -m pip install sphinx
@@ -67,10 +67,10 @@ function generate_documentation()
 
 function main()
 {
-        # script to install python
-        wget https://raw.githubusercontent.com/dyer234/build_python/master/install_python.sh
-	
-        download_latest_winsparkle
+	# script to install python
+	wget https://raw.githubusercontent.com/dyer234/build_python/master/install_python.sh
+
+	download_latest_winsparkle
 
 	sudo apt-get install pandoc
 
@@ -110,15 +110,12 @@ function main()
 	build_python_wheel 2 7 18 win32
 	build_python_wheel 2 7 18 win_amd64
 
-	sudo rm -rf WORK_TEMP	
+	sudo rm -rf WORK_TEMP
 	sudo rm -rf install_python.sh
-        cd ../
+
+	cd ../
 
 	generate_documentation
 }
 
 main
-
-
-
-
